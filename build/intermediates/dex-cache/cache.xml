@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/mithramedia/Documents/AndroidDevelopment/AndroidSDK/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_33969335fb0250384bf2c48b5418e45af5a3c321.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_e08e08544c18a4c048b400ac45a01a538741bc70.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.4.0_4044e7c484650416de8305f4891ff047479cac45.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_073b6dac12e1e9da3e9308c3d6beb3edee5434aa.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_6bfccd00b99b8dad36fbbe50032873a3a9528633.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/libs/mina-core-2.0.7.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c878e2aa82de748474a624ec3933e4604e446dec">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/mina-core-2.0.7_f67c1885cd031b570062d0c6394ede429e7a8e2e.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/.gradle/caches/modules-2/files-2.1/com.parse/parseinterceptors/0.0.2/8c62746a7c33ffa044d9cd9c390a4c9d209b8925/parseinterceptors-0.0.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8c62746a7c33ffa044d9cd9c390a4c9d209b8925">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/parseinterceptors-0.0.2_ab220d7a7acb0668dac1179f738e5c9eefbcbe64.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.1.0_878be4f11cc07d65f65d6e590d30531dc86e3d13.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_16e33e67c20e27f325297ddcc13bac2752492534.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_a8339e5a9993ed55d94e60aabc184121cc9c041f.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.1.0_84349ff6a342a8130bdb5009f5159547ddf7a145.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_b7faa609397df04cfa6c1c27fde3fecf52fa2d24.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.13.0/58a7d54b6a4f28be11f0cecec93097eddf473e6f/parse-android-1.13.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="58a7d54b6a4f28be11f0cecec93097eddf473e6f">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/parse-android-1.13.0_f29fc06bd957d98958f4f7abae3d99d52e1d11a4.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_80a4ebb9538471d3d87536047d57bfb49cdc6279.jar" />
+    </item>
+    <item
+        jar="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/libs/red5streaming.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="702f67875d0e3621a0c719bc837b994a4521fb77">
+        <dex dex="/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/pre-dexed/debug/red5streaming_0f51004fc2637279b891c07399567aecca3360be.jar" />
+    </item>
+
+</items>
