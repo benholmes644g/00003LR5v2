@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/res/merged/debug/menu/main.xml",
-        "source": "/Users/mithramedia/Desktop/ben/Chatt 2 2/app/src/main/res/menu/main.xml"
+        "merged": "/Users/mithramedia/Documents/00003LR5v2/app/build/intermediates/res/merged/debug/menu/newchat.xml",
+        "source": "/Users/mithramedia/Documents/00003LR5v2/app/src/main/res/menu/newchat.xml"
     },
     {
-        "merged": "/Users/mithramedia/Desktop/ben/Chatt 2 2/app/build/intermediates/res/merged/debug/menu/newchat.xml",
-        "source": "/Users/mithramedia/Desktop/ben/Chatt 2 2/app/src/main/res/menu/newchat.xml"
+        "merged": "/Users/mithramedia/Documents/00003LR5v2/app/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/Users/mithramedia/Documents/00003LR5v2/app/src/main/res/menu/main.xml"
     }
 ]

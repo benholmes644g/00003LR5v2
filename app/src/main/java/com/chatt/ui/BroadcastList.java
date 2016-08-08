@@ -17,7 +17,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.chatt.R;
@@ -63,7 +62,7 @@ public class BroadcastList extends CustomFragmentNew {
 
 
     }
-    ArrayList<BroadcastItem> braodcastLists =  new ArrayList<BroadcastItem>();
+    ArrayList<BroadcastItem> braodcastLists ;//=  new ArrayList<BroadcastItem>();
     ArrayList<BroadcastItem> offlinelist;
 
     private BroadcastList vpub;
@@ -78,11 +77,13 @@ public class BroadcastList extends CustomFragmentNew {
     protected int cameraOrientation;
     public ListView list2;
     public int i;
-    public String currentStreamName;
+    public String currentStreamName,previousStreamName;
     public static boolean swapped = false;
     public int tapped;
-
+    BroadcastAdapter2 myAdapter;
     public boolean isFetchingStatus = false;
+    public boolean isLoadingStream = false;
+
 
     protected String getStream1() {
         if (!swapped) return ParseUser.getCurrentUser().getUsername().toString();
@@ -99,10 +100,14 @@ public class BroadcastList extends CustomFragmentNew {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-          v = inflater.inflate(R.layout.broadcast_list, null);
+        myAdapter = new BroadcastAdapter2();
+        braodcastLists = new ArrayList<BroadcastItem>();
+
+        v = inflater.inflate(R.layout.broadcast_list, null);
 
 
         getLiveUser();
+        getNewStream(0);
 
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -442,7 +447,6 @@ public class BroadcastList extends CustomFragmentNew {
 
                 isFetchingStatus = true;
 
-            braodcastLists = new ArrayList<BroadcastItem>();
             final String currentuserid = ParseUser.getCurrentUser().getObjectId();
             ParseQuery<ParseObject> query = ParseQuery.getQuery("UserLanguage");
             query.orderByAscending("username");
@@ -456,6 +460,7 @@ public class BroadcastList extends CustomFragmentNew {
                     if (e == null) {
 
                         if (objects.size() > 0) {
+                           final ArrayList <BroadcastItem> tempBroadcastItem= new ArrayList<BroadcastItem>();
 
 
                             for (final ParseObject obj : objects) {
@@ -492,16 +497,21 @@ public class BroadcastList extends CustomFragmentNew {
                                                 Log.d("FINAL LOG", user.toString());
 
                                                 if(!obj_fetch.getObjectId().equals(currentuserid))
-                                                braodcastLists.add(user);
-                                                Collections.sort(braodcastLists);
+                                                    tempBroadcastItem.add(user) // braodcastLists.add(user);
+                                                   //
+;                                               // braodcastLists.add(user);
+                                                // Collections.sort(braodcastLists);
+
 
 
                                                 i--;
                                                 if (i == 0) {
-                                                    userlist3();
+                                                    swapBroadCastListItem(tempBroadcastItem);
+
+
+
 
                                                     isFetchingStatus = false;
-
                                                     return;
                                                 }
 
@@ -517,9 +527,16 @@ public class BroadcastList extends CustomFragmentNew {
 
 
                             }
+
                         } else {
 
                           //  braodcastLists.clear();
+
+                            if(braodcastLists !=null)
+                                if(braodcastLists.size()>0)
+                            braodcastLists.clear();
+
+                            myAdapter.notifyDataSetChanged();
 
                             userlist3();
                             isFetchingStatus = false;
@@ -534,7 +551,20 @@ public class BroadcastList extends CustomFragmentNew {
 
 
 
+public void swapBroadCastListItem(ArrayList<BroadcastItem> array){
+    braodcastLists.clear();
 
+    for (final BroadcastItem item : array) {
+
+
+        braodcastLists.add(item);
+
+
+    }
+    Collections.sort(braodcastLists);
+    myAdapter.notifyDataSetChanged();
+    userlist3();
+}
     private void userlist3()
     {
 
@@ -544,17 +574,22 @@ public class BroadcastList extends CustomFragmentNew {
 
             list2 = (ListView) v.findViewById(R.id.list2);
 
-            list2.setAdapter(new BroadcastAdapter2());
+            list2.setAdapter(myAdapter);
 
 
             list2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                    if(isFetchingStatus || isLoadingStream){
+                        return;
+                    }
+                    isLoadingStream = true;
                     BroadcastItem obj = (BroadcastItem) list2.getAdapter().getItem(position);
+                   // ((BroadcastAdapter2)myAdapter).notifyDataSetChanged();
                     // String value =
                     // Log.d("MyLog", "Value is: "+value);
                     String name = // how code to get name value.
+                            previousStreamName = currentStreamName;
                             currentStreamName = obj.getName();
 
 
@@ -566,7 +601,7 @@ public class BroadcastList extends CustomFragmentNew {
                             Log.d("Language", flag);
 
 
-                            Toast.makeText(getActivity(), flag, Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(getActivity(), flag, Toast.LENGTH_SHORT).show();
                             tapped = position;
 //                            Log.d("tapped",String.valueOf(tapped));
 
@@ -577,11 +612,20 @@ public class BroadcastList extends CustomFragmentNew {
                             parent.getChildAt(j).setBackgroundColor(Color.TRANSPARENT);
                         }
                     }
+                    if(currentStreamName.equals(previousStreamName)){
+                        isLoadingStream = false;
+                        return;
+                    }
                     if (subscribe != null) {
                         subscribe.stop();
+                    }else{
+
+                        subscribe = getNewStream(0);
                     }
-                    subscribe = getNewStream(0);
+
                     subscribe.play(currentStreamName);
+                    isLoadingStream = false;
+
 
 
                 }
@@ -595,6 +639,14 @@ public class BroadcastList extends CustomFragmentNew {
                 Log.d("Zero","0");
             TextView t2 = (TextView) v.findViewById(R.id.empty);
             t2.setText("No users");
+            list2 = (ListView) v.findViewById(R.id.list2);
+
+            list2.setAdapter(myAdapter);
+
+
+            list2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {}});
             // list2.setEmptyView(v.findViewById(R.id.empty));
             //list2.setAdapter(new BroadcastAdapter2());
 
@@ -698,7 +750,7 @@ public class BroadcastList extends CustomFragmentNew {
 
             if(braodcastLists.size() == 0){
                 //braodcastLists.notifyAll();
-                return 0;
+                return -1;
 
             }
             else{

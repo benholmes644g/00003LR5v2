@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="domain">23.249.163.152</string>
+    <string name="domain">66.85.27.106</string>
     <string name="context">live</string>
     <integer name="port">8554</integer>
     <string name="stream1">stream1</string>

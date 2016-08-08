@@ -1,6 +1,7 @@
 package com.chatt;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -44,7 +45,7 @@ public class Login extends CustomActivity
 
 		u_name = (EditText) findViewById(R.id.editText1);
 		u_pass = (EditText) findViewById(R.id.editText2);
-
+		LoadPreferences();
 
 
 
@@ -79,11 +80,15 @@ public class Login extends CustomActivity
 			
 			String user_name = u_name.getText().toString();
 			String pass_word = u_pass.getText().toString();
+			SavePreferences("user",user_name);
+			SavePreferences("pass",pass_word);
 
 			user.logInInBackground(user_name, pass_word, new LogInCallback() {
 				@Override
 				public void done(ParseUser user, ParseException e) {
 					if(e == null){
+
+
 
 						Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_LONG).show();
 						Intent intent = new Intent(Login.this,MainActivity.class);
@@ -140,6 +145,19 @@ public class Login extends CustomActivity
 		r.setRepeatCount(10);
 		img.startAnimation(r);
 
+	}
+	private void SavePreferences(String key, String value){
+		SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+		SharedPreferences.Editor editor = sharedPreferences.edit();
+		editor.putString(key, value);
+		editor.commit();
+	}
+	private void LoadPreferences(){
+		SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+		String strSavedMem1 = sharedPreferences.getString("user", "");
+		String strSavedMem2 = sharedPreferences.getString("pass", "");
+		u_name.setText(strSavedMem1);
+		u_pass.setText(strSavedMem2);
 	}
 
 
